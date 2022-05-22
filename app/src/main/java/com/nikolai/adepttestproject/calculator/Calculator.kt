@@ -30,18 +30,33 @@ class Calculator : Fragment() {
 
         val Minus = view.findViewById<Button>(R.id.buttonMinus)
         Minus.setOnClickListener {
-            val answer = viewModel.minus()
-            view.findViewById<TextView>(R.id.answerExit).text = answer.toString()
+            try {
+                val answer = viewModel.minus()
+                view.findViewById<TextView>(R.id.answerExit).text = answer.toString()
+            }
+            catch(error: Exception) {
+                view.findViewById<TextView>(R.id.answerExit).text = error.message
+            }
         }
         val Plus = view.findViewById<Button>(R.id.buttonPlus)
         Plus.setOnClickListener {
-            val answer = viewModel.plus()
-            view.findViewById<TextView>(R.id.answerExit).text = answer.toString()
+            try {
+                val answer = viewModel.plus()
+                view.findViewById<TextView>(R.id.answerExit).text = answer.toString()
+            }
+            catch(error: Exception) {
+                view.findViewById<TextView>(R.id.answerExit).text = error.message
+            }
         }
         val Umno = view.findViewById<Button>(R.id.umno)
         Umno.setOnClickListener {
-            val answer = viewModel.umno()
-            view.findViewById<TextView>(R.id.answerExit).text = answer.toString()
+            try {
+                val answer = viewModel.umno()
+                view.findViewById<TextView>(R.id.answerExit).text = answer.toString()
+            }
+            catch(error: Exception) {
+                view.findViewById<TextView>(R.id.answerExit).text = error.message
+            }
         }
         val Delen = view.findViewById<Button>(R.id.delen)
         Delen.setOnClickListener {
